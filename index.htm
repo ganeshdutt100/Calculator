@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/256/1325/1325970.png?ga=GA1.1.435240953.1699339320&semt=ais">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Honk&display=swap" rel="stylesheet">s
+</head>
+<body>
+    <h1  class="hText">Calculator</h1>
+    <div class="main " >
+    <div class="form-control">
+        <input type="value" required=""id="TextInput1">
+        <label>
+            <span style="transition-delay:0ms">F</span><span style="transition-delay:50ms">i</span><span style="transition-delay:100ms">r</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">t</span><span style="transition-delay:250ms">-</span><span style="transition-delay:300ms">D</span><span 
+            style="transition-delay:350ms">i</span><span 
+            style="transition-delay:400ms">g</span><span 
+            style="transition-delay:450ms">i</span><span 
+            style="transition-delay:500ms">t</span>
+        </label>
+        
+    </div>
+    <div class="form-control">
+        <input type="value" required="" id="operators" ">
+        <label>
+            <span style="transition-delay:0ms">O</span><span style="transition-delay:50ms">p</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">a</span><span style="transition-delay:250ms">t</span><span style="transition-delay:300ms">o</span><span 
+            style="transition-delay:300ms">r</span><span 
+            style="transition-delay:350ms">s</span>
+            <span style="transition-delay:350ms"> +</span>
+            <span style="transition-delay:400ms"> -</span>
+            <span style="transition-delay:450ms"> *</span>
+            <span style="transition-delay:500ms"> /</span>
+        </label>
+    </div>
+    <div class="form-control">
+        <input type="value" required="" id="TextInput2">
+        <label>
+            <span style="transition-delay:0ms">S</span><span style="transition-delay:50ms">e</span><span style="transition-delay:100ms">c</span><span style="transition-delay:150ms">o</span><span style="transition-delay:200ms">n</span><span 
+            style="transition-delay:200ms">d</span><span 
+            style="transition-delay:250ms">-</span><span style="transition-delay:300ms">D</span><span 
+            style="transition-delay:350ms">i</span><span 
+            style="transition-delay:400ms">g</span><span 
+            style="transition-delay:450ms">i</span><span 
+            style="transition-delay:500ms">t</span>
+        </label>
+    </div>
+    <div class="form-control">
+        <input type="value" required="" id="demo" disabled placeholder="Result">
+    </div>
+
+   
+    <button alt=" Calculate" onclick="fun()">
+        <i>C</i>
+        <i>a</i>
+        <i>l</i>
+        <i>c</i>
+        <!-- <i>&nbsp;</i> -->
+        <i>u</i>
+        <i>l</i>
+        <i>a</i>
+        <i>t</i>
+        <i>e</i>
+      </button>
+        
+        
+ </div>
+    <script>
+        let TextInput1 = document.getElementById('TextInput1');
+        let operators = document.getElementById('operators');
+        let TextInput2 = document.getElementById('TextInput2');
+        let demo = document.getElementById('demo');
+
+        function fun() {
+            const newNum1 = parseFloat(TextInput1.value);
+            const newop = operators.value;
+            const newNum2 = parseFloat(TextInput2.value);
+
+            switch (newop) {
+                case '+':
+                    demo.value = newNum1 + newNum2;
+                    break;
+
+                case '-':
+                    demo.value = newNum1 - newNum2;
+                    break;
+
+                case '*':
+                    demo.value = newNum1 * newNum2;
+                    break;
+
+                case '/':
+                    if (newNum2 === 0) {
+                        demo.value = "Can't divide by zero";
+                    } else {
+                        demo.value = newNum1 / newNum2;
+                    }
+                    break;
+
+                default:
+                    demo.value = "Invalid input";
+            }
+        }
+    </script>
+</body>
+</html>
